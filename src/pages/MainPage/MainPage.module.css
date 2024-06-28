@@ -1,0 +1,13 @@
+.main__page {
+  margin: 0 auto;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  gap: 1em;
+}
+
+

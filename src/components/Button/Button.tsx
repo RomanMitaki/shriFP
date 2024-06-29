@@ -1,9 +1,7 @@
-import {Dispatch, SetStateAction} from "react";
-
 type TButtonProps = {
     text: string,
     styleType: 'primary' | 'secondary' | 'inverted' | null,
-    onClick: Dispatch<SetStateAction<boolean>>
+    onClick: () => void
 };
 const Button = ({text, styleType, onClick}: TButtonProps) => {
     let buttonStyle = {};
@@ -27,8 +25,8 @@ const Button = ({text, styleType, onClick}: TButtonProps) => {
             break;
         case 'secondary':
             buttonStyle = {
-                backgroundColor: '#333333',
-                color: '#FF5500',
+                backgroundColor: '#FF5500',
+                color: '#FFFFFF',
                 padding: '10px 16px',
                 borderRadius: '8px',
                 border: '1px solid #FF5500',

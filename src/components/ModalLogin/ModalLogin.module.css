@@ -1,0 +1,74 @@
+.modalLogin {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.head__container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.head__name {
+    font: var(--font-l);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.btn__close {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+.form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.label__name {
+    margin: 0;
+    padding: 0;
+}
+
+.input {
+    width: 296px;
+    margin: 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #CED2D6;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #FF5500;
+    box-shadow: none;
+}
+
+.btns__container {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-top: 8px;
+    gap: 8px;
+}

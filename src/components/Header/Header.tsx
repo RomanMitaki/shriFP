@@ -4,6 +4,7 @@ import {AppRoutes, RoutePath} from "../../utils/config/router";
 import Button from "../Button/Button.tsx";
 import Modal from "../Modal/Modal.tsx";
 import {useState} from "react";
+import ModalLogin from "../ModalLogin/ModalLogin.tsx";
 
 
 const Header = () => {
@@ -25,7 +26,11 @@ const Header = () => {
             <Modal isOpen={isOpen}
                    onClose={() => {
                        setIsOpen(false);
-                   }}/>
+                   }}>
+                <ModalLogin onClick={() => {
+                    setIsOpen(false);
+                }}/>
+            </Modal>
         </>
 
     );

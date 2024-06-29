@@ -1,13 +1,12 @@
 import styles from "./MainContainer.module.css";
+import SearchInput from "../SearchInput/SearchInput.tsx";
 
 
 const MainContainer = () => {
 
     return (
         <section className={styles.mainContainer}>
-            <h2>Фильтр</h2>
-            <p>Жанр</p>
-            <p>Год выпуска</p>
+            <SearchInput/>
         </section>
     );
 };

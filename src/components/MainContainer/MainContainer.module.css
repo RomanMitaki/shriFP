@@ -1,6 +1,5 @@
 .mainContainer {
     box-sizing: border-box;
-    background: #FFFFFF;
     min-width: 408px;
     font: var(--font-s);
     display: flex;

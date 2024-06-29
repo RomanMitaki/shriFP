@@ -2,6 +2,7 @@
 
 :root {
   --font-family-main: "SF Pro Text", sans-serif;
+  --font-family-second: "Roboto", sans-serif;
   --font-size-s: 14px;
   --font-line-s: 1.4;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
@@ -14,6 +15,19 @@
   --font-size-xl: 32px;
   --font-line-xl: 1;
   --font-xl: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+  --font-size-s-second: 14px;
+  --font-line-s-second: 1.4;
+  --font-s-second: var(--font-size-s-second) / var(--font-line-s-second) var(--font-family-second);
+  --font-size-m-second: 16px;
+  --font-line-m-second: 1.5;
+  --font-m-second: var(--font-size-m-second) / var(--font-line-m-second) var(--font-family-second);
+  --font-size-l-second: 20px;
+  --font-line-l-second: 1;
+  --font-l-second: var(--font-size-l-second) / var(--font-line-l-second) var(--font-family-second);
+  --font-size-xl-second: 32px;
+  --font-line-xl-second: 1;
+  --font-xl-second: var(--font-size-l-second) / var(--font-line-l-second) var(--font-family-second);
 
   --modal-z-index: 10;
 

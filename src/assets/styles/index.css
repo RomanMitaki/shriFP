@@ -10,11 +10,11 @@ body {
 }
 
 .app {
-  background: #eaeaea;
+  background: #F8F8F8;;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1170px;
+  max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
 }

@@ -1,11 +1,11 @@
-import styles from "./Button.module.css";
-
+import {Dispatch, SetStateAction} from "react";
 
 type TButtonProps = {
     text: string,
     styleType: 'primary' | 'secondary' | 'inverted' | null,
+    onClick: Dispatch<SetStateAction<boolean>>
 };
-const Button = ({text, styleType}: TButtonProps) => {
+const Button = ({text, styleType, onClick}: TButtonProps) => {
     let buttonStyle = {};
 
     switch (styleType) {
@@ -75,7 +75,7 @@ const Button = ({text, styleType}: TButtonProps) => {
     }
 
     return (
-        <button style={buttonStyle}>
+        <button onClick={onClick} style={buttonStyle}>
             {text}
         </button>
     );

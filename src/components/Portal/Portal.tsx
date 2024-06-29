@@ -5,9 +5,11 @@ interface PortalProps {
   children: ReactNode;
   element?: HTMLElement;
 }
-export const Portal = ({ children, element = document.body }: PortalProps) => {
+const Portal = ({ children, element = document.body }: PortalProps) => {
   return createPortal(
     children,
     document.getElementById("modals") as HTMLElement,
   );
 };
+
+export default Portal;

@@ -20,12 +20,12 @@
 }
 
 .content {
-  padding: 20px;
-  border-radius: 30px;
+  padding: 24px;
+  border-radius: 8px;
   background: #ffffff;
   transition: 0.3s transform;
   transform: scale(0.5);
-  max-width: 40%;
+  width: 344px;
   font: var(--font-s);
 }
 

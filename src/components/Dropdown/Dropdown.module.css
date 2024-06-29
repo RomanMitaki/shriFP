@@ -1,0 +1,65 @@
+.dropdown {
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px #E1E3E6 solid;
+    border-radius: 8px;
+    color: #999FA6;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+    max-height: 40px;
+}
+
+.container.open {
+    max-height: 100vh;
+}
+
+.header {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font: var(--font-s);
+    color: #1B1F23;
+    box-shadow: 0px 10px 22px -4px #1B1F231F;
+    border: none;
+
+}
+
+.list__item {
+    list-style: none;
+    margin: 12px;
+    padding: 0;
+}
+
+.list__btn {
+    all: unset;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}

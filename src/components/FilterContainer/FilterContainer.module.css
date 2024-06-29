@@ -1,0 +1,13 @@
+.filterContainer {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    min-height: 232px;
+    width: 408px;
+    font: var(--font-s);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 24px;
+    color: #1B1F23;
+    border-radius: 8px;
+}

@@ -25,6 +25,11 @@
 
 .container.open {
     max-height: 100vh;
+    border: 1px #FF5500 solid;
+}
+
+.container:hover {
+    border: 1px #FF5500 solid;
 }
 
 .header {

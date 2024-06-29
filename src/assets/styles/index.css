@@ -19,12 +19,4 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
-  font: var(--font-l);
-  margin: 0;
-}
 
-h2 {
-  font: var(--font-m);
-  margin: 0;
-}

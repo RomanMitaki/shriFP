@@ -11,3 +11,19 @@
     color: #1B1F23;
     border-radius: 8px;
 }
+
+.header {
+    font: var(--font-line-m-second);
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.subHeader {
+    font: var(--font-line-s);
+    font-family: "SF Pro Text", sans-serif;
+    font-weight: 400;
+    margin: 20px 0 0 0;
+    padding: 0;
+}

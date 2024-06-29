@@ -8,10 +8,10 @@ const FilterContainer = () => {
 
     return (
         <section className={styles.filterContainer}>
-            <h2>Фильтр</h2>
-            <p>Жанр</p>
-            <Dropdown items={genres} header={'Выберите жанр'}/>
-            <p>Год выпуска</p>
+            <h2 className={styles.header}>Фильтр</h2>
+            <p className={styles.subHeader}>Жанр</p>
+            <Dropdown items={genres} header={'Выберите жанр'} />
+            <p className={styles.subHeader}>Год выпуска</p>
             <Dropdown items={years} header={'Выберите год'}/>
         </section>
     );

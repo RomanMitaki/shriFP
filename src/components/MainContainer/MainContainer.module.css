@@ -8,5 +8,6 @@
     padding: 24px;
     color: #1B1F23;
     border-radius: 8px;
-    flex-grow: 1;
+    flex: 1;
+    gap: 16px;
 }

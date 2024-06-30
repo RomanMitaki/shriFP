@@ -2,10 +2,22 @@ import React, {useState, useEffect} from "react";
 import styles from "./SearchInput.module.css";
 import {ReactComponent as ZoomIcon} from "../../assets/icons/search-zoom.svg";
 import {ReactComponent as ClearIcon} from "../../assets/icons/search-clear.svg";
+import {renderAllFilms} from "../../services/actions/films.ts";
+import {useAppDispatch} from "../../services/hooks/useAppDispatch.ts";
+
 
 const SearchInput: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [showClearButton, setShowClearButton] = useState<boolean>(false);
+    const dispatch = useAppDispatch();
+
+
+    useEffect(() => {
+        if (searchTerm === "") {
+            console.log("Отправка запроса на сервер при первом рендере страницы");
+            dispatch(renderAllFilms())
+        }
+    }, [dispatch]);
 
 
     useEffect(() => {

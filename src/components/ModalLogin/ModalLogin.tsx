@@ -23,11 +23,6 @@ const ModalLogin = ({onClick}: TModalLoginProps) => {
         console.log('Вход выполнен');
     };
 
-    const handleCancel = () => {
-        // Обработка отмены
-        console.log('Вход отменен');
-    };
-
     return (
         <div className={styles.modalLogin}>
             <div className={styles.head__container}>
@@ -37,7 +32,7 @@ const ModalLogin = ({onClick}: TModalLoginProps) => {
                 </button>
             </div>
             <form className={styles.form} onSubmit={handleLogin}>
-                <label for='Login'>
+                <label>
                     <p className={styles.label__name}>Логин <span style={{color: '#F04075'}}>*</span></p>
                     <input
                         className={styles.input}
@@ -47,7 +42,7 @@ const ModalLogin = ({onClick}: TModalLoginProps) => {
                         onChange={handleLoginChange}
                         placeholder='Введите логин'/>
                 </label>
-                <label for='Password'>
+                <label>
                     <p className={styles.label__name}>Пароль <span style={{color: '#F04075'}}>*</span></p>
                     <input
                         className={styles.input}
@@ -59,7 +54,7 @@ const ModalLogin = ({onClick}: TModalLoginProps) => {
                 </label>
                 <div className={styles.btns__container}>
                     <Button onClick={handleLogin} text='Войти' styleType='secondary'/>
-                    <Button onClick={handleCancel} text='Отменить' styleType='inverted'/>
+                    <Button onClick={onClick} text='Отменить' styleType='inverted'/>
                 </div>
             </form>
         </div>

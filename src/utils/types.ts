@@ -6,6 +6,13 @@ type TActor = {
   photo: string; // base64 img
 }
 
+export type TParams = {
+  title?: string,
+  genre?: string,
+  release_year?: string,
+  page?: number
+}
+
 export type TFilm = {
   id: string;
   title: string;
@@ -31,6 +38,7 @@ export type TFilmsState = {
   pages: number;
   currentPage: number;
   hasError: boolean;
+  params: TParams;
 };
 
 export type RootState = ReturnType<typeof store.getState>;

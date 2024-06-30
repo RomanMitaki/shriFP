@@ -1,8 +1,11 @@
-import {TGetAllFilmResponse} from "./types.ts";
+import {TGetAllFilmResponse, TParams} from "./types.ts";
+import {buildQueryString} from "./buildQueryString.ts";
 
-export const getAllFilms = async (page: number) => {
+export const getFilms = async (params: TParams) => {
     try {
-        const response = await fetch(`http://localhost:3030/api/v1/search?page=${page}`);
+        const query = buildQueryString(params);
+        console.log(query, `http://localhost:3030/api/v1/search${query}`)
+        const response = await fetch(`http://localhost:3030/api/v1/search${query}`);
         if (!response.ok) {
             throw new Error(
                 `Network response was not ok, status: ${response.status}`,
@@ -14,5 +17,7 @@ export const getAllFilms = async (page: number) => {
         console.error("An error occurred:", error);
     }
 };
+
+
 
 

@@ -2,23 +2,16 @@ import React, {useState, useEffect} from "react";
 import styles from "./SearchInput.module.css";
 import {ReactComponent as ZoomIcon} from "../../assets/icons/search-zoom.svg";
 import {ReactComponent as ClearIcon} from "../../assets/icons/search-clear.svg";
-import {renderAllFilms} from "../../services/actions/films.ts";
+import {renderFilms} from "../../services/actions/films.ts";
 import {useAppDispatch} from "../../services/hooks/useAppDispatch.ts";
+import {useAppSelector} from "../../services/hooks/useAppSelector.ts";
+import {resetPage, setSearchTerm} from "../../services/slices/filmsSlice.ts";
 
 
 const SearchInput: React.FC = () => {
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const {params, searchTerm} = useAppSelector((store) => store.films);
     const [showClearButton, setShowClearButton] = useState<boolean>(false);
     const dispatch = useAppDispatch();
-
-
-    useEffect(() => {
-        if (searchTerm === "") {
-            console.log("Отправка запроса на сервер при первом рендере страницы");
-            dispatch(renderAllFilms(1))
-        }
-    }, [dispatch]);
-
 
     useEffect(() => {
         let debounceTimeout: number;
@@ -26,9 +19,9 @@ const SearchInput: React.FC = () => {
         const handleDebounce = () => {
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
-
-                console.log("Отправка запроса на сервер:", searchTerm);
-            }, 2000);
+                dispatch(renderFilms({...params, page: 1}));
+                dispatch(resetPage())
+            }, 1000);
         };
 
         handleDebounce();
@@ -36,11 +29,11 @@ const SearchInput: React.FC = () => {
         return () => {
             clearTimeout(debounceTimeout);
         };
-    }, [searchTerm]);
+    }, [params.title, dispatch]);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {value} = event.target;
-        setSearchTerm(value);
+        dispatch(setSearchTerm(value));
     };
 
     const handleFocus = () => {
@@ -49,11 +42,10 @@ const SearchInput: React.FC = () => {
 
     const handleBlur = () => {
         setTimeout(() => {setShowClearButton(false)}, 200)
-
     };
 
     const handleClear = () => {
-        setSearchTerm("");
+        dispatch(setSearchTerm(''));
     };
 
     return (
@@ -64,7 +56,7 @@ const SearchInput: React.FC = () => {
             <input
                 type="text"
                 placeholder="Название фильма"
-                value={searchTerm}
+                value={params.title}
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}

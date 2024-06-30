@@ -7,6 +7,12 @@ const initialState: TFilmsState = {
     hasError: false,
     pages: 0,
     currentPage: 1,
+    params: {
+        title: '',
+        genre: undefined,
+        release_year: undefined,
+        page: 1,
+    },
 };
 
 export const filmsSlice = createSlice({
@@ -27,9 +33,19 @@ export const filmsSlice = createSlice({
         },
         increasePage: (state) => {
             state.currentPage++;
+            state.params.page++;
         },
         decreasePage: (state) => {
             state.currentPage--;
+            state.params.page--;
+        },
+        setSearchTerm: (state, action) => {
+            state.params.title = action.payload;
+
+        },
+        resetPage: (state) => {
+            state.currentPage = 1;
+            state.params.page = 1;
         },
     },
 });
@@ -40,5 +56,7 @@ export const {
     requestFailed,
     increasePage,
     decreasePage,
+    setSearchTerm,
+    resetPage,
 } = filmsSlice.actions;
 export default filmsSlice.reducer;

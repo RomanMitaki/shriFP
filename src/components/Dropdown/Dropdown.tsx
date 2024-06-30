@@ -2,6 +2,7 @@ import styles from "./Dropdown.module.css";
 import React, {useState, useEffect} from 'react';
 import {ReactComponent as ArrowDown} from "../../assets/icons/arrow-square-down.svg";
 import {ReactComponent as ArrowUp} from "../../assets/icons/arrow-square-up.svg";
+import DropdownSelect from "../DpopdownSelect/DpopdownSelect.tsx";
 
 type TDropdownProps = {
     items: string[];
@@ -37,7 +38,7 @@ const Dropdown: React.FC<TDropdownProps> = ({items, header}) => {
                 <ul className={styles.list}>
                     {items.map(item => (
                         <li className={styles.list__item} key={item} onClick={() => handleFilmSelect(item)}>
-                            <button className={styles.list__btn}>{item}</button>
+                            <DropdownSelect item={item}/>
                         </li>
                     ))}
                 </ul>

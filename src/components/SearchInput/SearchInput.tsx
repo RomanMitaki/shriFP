@@ -9,7 +9,7 @@ import {resetPage, setSearchTerm} from "../../services/slices/filmsSlice.ts";
 
 
 const SearchInput: React.FC = () => {
-    const {params, searchTerm} = useAppSelector((store) => store.films);
+    const {params} = useAppSelector((store) => store.films);
     const [showClearButton, setShowClearButton] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
@@ -19,7 +19,7 @@ const SearchInput: React.FC = () => {
         const handleDebounce = () => {
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
-                dispatch(renderFilms({...params, page: 1}));
+                dispatch(renderFilms({...params, release_year: undefined, genre: undefined, page: 1}));
                 dispatch(resetPage())
             }, 1000);
         };

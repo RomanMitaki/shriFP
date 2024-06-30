@@ -29,6 +29,7 @@ export type TFilmsState = {
   films: TGetAllFilmResponse["search_result"];
   isLoading: boolean;
   pages: number;
+  currentPage: number;
   hasError: boolean;
 };
 

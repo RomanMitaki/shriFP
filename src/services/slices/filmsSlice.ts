@@ -6,6 +6,7 @@ const initialState: TFilmsState = {
     isLoading: false,
     hasError: false,
     pages: 0,
+    currentPage: 1,
 };
 
 export const filmsSlice = createSlice({
@@ -24,6 +25,12 @@ export const filmsSlice = createSlice({
             state.isLoading = false;
             state.hasError = true;
         },
+        increasePage: (state) => {
+            state.currentPage++;
+        },
+        decreasePage: (state) => {
+            state.currentPage--;
+        },
     },
 });
 
@@ -31,5 +38,7 @@ export const {
     getRequest,
     requestSuccessed,
     requestFailed,
+    increasePage,
+    decreasePage,
 } = filmsSlice.actions;
 export default filmsSlice.reducer;

@@ -15,7 +15,7 @@ const SearchInput: React.FC = () => {
     useEffect(() => {
         if (searchTerm === "") {
             console.log("Отправка запроса на сервер при первом рендере страницы");
-            dispatch(renderAllFilms())
+            dispatch(renderAllFilms(1))
         }
     }, [dispatch]);
 

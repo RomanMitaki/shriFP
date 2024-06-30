@@ -7,6 +7,9 @@
   height: 88px;
   box-sizing: border-box;
   background: #333333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .link {

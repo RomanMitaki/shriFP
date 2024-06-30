@@ -12,13 +12,15 @@ const FilmsContainer = () => {
     return (
         <div className={styles.filmsContainer}>
             {films.map((film) => (
-                <FilmCardMain
-                    key={film.id}
-                    title={film.title}
-                    genre={film.genre}
-                    releaseYear={film.release_year}
-                    description={film.description}
-                    image={film.poster}/>
+                <button className={styles.btn} key={film.id}>
+                    <FilmCardMain
+                        title={film.title}
+                        genre={film.genre}
+                        releaseYear={film.release_year}
+                        description={film.description}
+                        image={film.poster}/>
+                </button>
+
             ))}
         </div>
     );
